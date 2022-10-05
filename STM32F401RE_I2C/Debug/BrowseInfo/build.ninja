@@ -1,0 +1,163 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\XclFileGenerator.exe $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\XclFileGenerator.exe" $flags
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\SourceIndexer.exe $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\SourceIndexer.exe" $flags
+
+rule MAKEBROWSE
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\makeBrowseData.exe $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\makeBrowseData.exe" $flags
+
+rule PDBLINK
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\PbdLink.exe $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\PbdLink.exe" $flags
+
+
+
+#Build steps
+build D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\CMSIS\system_stm32f4xx.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\CMSIS\system_stm32f4xx.c" -xcl_file "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\CMSIS\system_stm32f4xx.xcl" -macro_file "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\CMSIS\system_stm32f4xx.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\CMSIS\system_stm32f4xx.c" -o "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\Obj\CMSIS" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\\" -I "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\CMSIS\\" -Ol -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\Core\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\DSP\Include\\" -D ARM_MATH_CM4 --source_encoding utf8 --text_out utf8 --utf8_text_in --predef_macros "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\CMSIS\system_stm32f4xx.tmp"
+  rspfile_name = D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\CMSIS\system_stm32f4xx.xcl.rsp
+
+build D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\delay.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\delay.c" -xcl_file "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\delay.xcl" -macro_file "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\delay.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\delay.c" -o "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\\" -I "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\CMSIS\\" -Ol -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\Core\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\DSP\Include\\" -D ARM_MATH_CM4 --source_encoding utf8 --text_out utf8 --utf8_text_in --predef_macros "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\delay.tmp"
+  rspfile_name = D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\delay.xcl.rsp
+
+build D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\EXTI.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\EXTI.c" -xcl_file "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\EXTI.xcl" -macro_file "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\EXTI.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\EXTI.c" -o "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\\" -I "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\CMSIS\\" -Ol -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\Core\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\DSP\Include\\" -D ARM_MATH_CM4 --source_encoding utf8 --text_out utf8 --utf8_text_in --predef_macros "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\EXTI.tmp"
+  rspfile_name = D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\EXTI.xcl.rsp
+
+build D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\gpio.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\gpio.c" -xcl_file "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\gpio.xcl" -macro_file "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\gpio.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\gpio.c" -o "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\\" -I "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\CMSIS\\" -Ol -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\Core\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\DSP\Include\\" -D ARM_MATH_CM4 --source_encoding utf8 --text_out utf8 --utf8_text_in --predef_macros "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\gpio.tmp"
+  rspfile_name = D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\gpio.xcl.rsp
+
+build D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\i2c.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\i2c.c" -xcl_file "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\i2c.xcl" -macro_file "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\i2c.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\i2c.c" -o "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\\" -I "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\CMSIS\\" -Ol -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\Core\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\DSP\Include\\" -D ARM_MATH_CM4 --source_encoding utf8 --text_out utf8 --utf8_text_in --predef_macros "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\i2c.tmp"
+  rspfile_name = D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\i2c.xcl.rsp
+
+build D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\LCD1602_I2C.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\LCD1602_I2C.c" -xcl_file "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\LCD1602_I2C.xcl" -macro_file "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\LCD1602_I2C.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\LCD1602_I2C.c" -o "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\\" -I "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\CMSIS\\" -Ol -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\Core\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\DSP\Include\\" -D ARM_MATH_CM4 --source_encoding utf8 --text_out utf8 --utf8_text_in --predef_macros "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\LCD1602_I2C.tmp"
+  rspfile_name = D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\LCD1602_I2C.xcl.rsp
+
+build D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\main.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\main.c" -xcl_file "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\main.xcl" -macro_file "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\main.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\main.c" -o "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\\" -I "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\CMSIS\\" -Ol -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\Core\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\DSP\Include\\" -D ARM_MATH_CM4 --source_encoding utf8 --text_out utf8 --utf8_text_in --predef_macros "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\main.tmp"
+  rspfile_name = D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\main.xcl.rsp
+
+build D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\MPU6050.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\MPU6050.c" -xcl_file "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\MPU6050.xcl" -macro_file "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\MPU6050.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\MPU6050.c" -o "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\\" -I "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\CMSIS\\" -Ol -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\Core\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\DSP\Include\\" -D ARM_MATH_CM4 --source_encoding utf8 --text_out utf8 --utf8_text_in --predef_macros "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\MPU6050.tmp"
+  rspfile_name = D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\MPU6050.xcl.rsp
+
+build D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\PID.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\PID.c" -xcl_file "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\PID.xcl" -macro_file "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\PID.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\PID.c" -o "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\\" -I "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\CMSIS\\" -Ol -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\Core\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\DSP\Include\\" -D ARM_MATH_CM4 --source_encoding utf8 --text_out utf8 --utf8_text_in --predef_macros "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\PID.tmp"
+  rspfile_name = D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\PID.xcl.rsp
+
+build D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\SET_CLOCK.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\SET_CLOCK.c" -xcl_file "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\SET_CLOCK.xcl" -macro_file "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\SET_CLOCK.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\SET_CLOCK.c" -o "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\\" -I "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\CMSIS\\" -Ol -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\Core\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\DSP\Include\\" -D ARM_MATH_CM4 --source_encoding utf8 --text_out utf8 --utf8_text_in --predef_macros "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\SET_CLOCK.tmp"
+  rspfile_name = D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\SET_CLOCK.xcl.rsp
+
+build D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\timer.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\timer.c" -xcl_file "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\timer.xcl" -macro_file "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\timer.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\timer.c" -o "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\\" -I "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\CMSIS\\" -Ol -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\Core\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\DSP\Include\\" -D ARM_MATH_CM4 --source_encoding utf8 --text_out utf8 --utf8_text_in --predef_macros "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\timer.tmp"
+  rspfile_name = D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\timer.xcl.rsp
+
+build D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\USART.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\USART.c" -xcl_file "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\USART.xcl" -macro_file "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\USART.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\USART.c" -o "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\\" -I "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\CMSIS\\" -Ol -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\Core\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\DSP\Include\\" -D ARM_MATH_CM4 --source_encoding utf8 --text_out utf8 --utf8_text_in --predef_macros "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\USART.tmp"
+  rspfile_name = D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\USART.xcl.rsp
+
+build D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\CMSIS\system_stm32f4xx.pbi : INDEXER D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\CMSIS\system_stm32f4xx.xcl |  $
+D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\CMSIS\system_stm32f4xx.c
+  flags = "-out=D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\CMSIS\system_stm32f4xx.pbi" -f "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\CMSIS\system_stm32f4xx.xcl"
+
+build D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\delay.pbi : INDEXER D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\delay.xcl |  $
+D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\delay.c
+  flags = "-out=D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\delay.pbi" -f "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\delay.xcl"
+
+build D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\EXTI.pbi : INDEXER D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\EXTI.xcl |  $
+D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\EXTI.c
+  flags = "-out=D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\EXTI.pbi" -f "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\EXTI.xcl"
+
+build D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\gpio.pbi : INDEXER D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\gpio.xcl |  $
+D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\gpio.c
+  flags = "-out=D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\gpio.pbi" -f "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\gpio.xcl"
+
+build D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\i2c.pbi : INDEXER D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\i2c.xcl |  $
+D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\i2c.c
+  flags = "-out=D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\i2c.pbi" -f "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\i2c.xcl"
+
+build D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\LCD1602_I2C.pbi : INDEXER D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\LCD1602_I2C.xcl |  $
+D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\LCD1602_I2C.c
+  flags = "-out=D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\LCD1602_I2C.pbi" -f "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\LCD1602_I2C.xcl"
+
+build D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\main.pbi : INDEXER D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\main.xcl |  $
+D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\main.c
+  flags = "-out=D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\main.pbi" -f "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\main.xcl"
+
+build D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\MPU6050.pbi : INDEXER D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\MPU6050.xcl |  $
+D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\MPU6050.c
+  flags = "-out=D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\MPU6050.pbi" -f "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\MPU6050.xcl"
+
+build D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\PID.pbi : INDEXER D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\PID.xcl |  $
+D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\PID.c
+  flags = "-out=D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\PID.pbi" -f "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\PID.xcl"
+
+build D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\SET_CLOCK.pbi : INDEXER D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\SET_CLOCK.xcl |  $
+D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\SET_CLOCK.c
+  flags = "-out=D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\SET_CLOCK.pbi" -f "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\SET_CLOCK.xcl"
+
+build D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\timer.pbi : INDEXER D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\timer.xcl |  $
+D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\timer.c
+  flags = "-out=D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\timer.pbi" -f "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\timer.xcl"
+
+build D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\USART.pbi : INDEXER D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\USART.xcl |  $
+D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\USART.c
+  flags = "-out=D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\USART.pbi" -f "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\USART.xcl"
+
+build D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\STM32F401RE_I2C.pbw : MAKEBROWSE D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\STM32F401RE_I2C.pbd
+  flags = "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\STM32F401RE_I2C.pbd" -output "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\STM32F401RE_I2C.pbw"
+
+build D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\STM32F401RE_I2C_part0.pbi : PDBLINK D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\CMSIS\system_stm32f4xx.pbi |  $
+D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\delay.pbi $
+D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\EXTI.pbi
+  flags = -M "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\STM32F401RE_I2C_part0.pbi" "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\CMSIS\system_stm32f4xx.pbi" "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\delay.pbi" "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\EXTI.pbi"
+
+build D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\STM32F401RE_I2C_part1.pbi : PDBLINK D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\gpio.pbi |  $
+D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\i2c.pbi $
+D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\LCD1602_I2C.pbi
+  flags = -M "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\STM32F401RE_I2C_part1.pbi" "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\gpio.pbi" "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\i2c.pbi" "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\LCD1602_I2C.pbi"
+
+build D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\STM32F401RE_I2C_part2.pbi : PDBLINK D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\main.pbi |  $
+D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\MPU6050.pbi $
+D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\PID.pbi
+  flags = -M "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\STM32F401RE_I2C_part2.pbi" "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\main.pbi" "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\MPU6050.pbi" "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\PID.pbi"
+
+build D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\STM32F401RE_I2C_part3.pbi : PDBLINK D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\SET_CLOCK.pbi |  $
+D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\timer.pbi $
+D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\USART.pbi
+  flags = -M "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\STM32F401RE_I2C_part3.pbi" "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\SET_CLOCK.pbi" "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\timer.pbi" "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\USART.pbi"
+
+build D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\STM32F401RE_I2C.pbd : PDBLINK D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\STM32F401RE_I2C_part0.pbi |  $
+D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\STM32F401RE_I2C_part1.pbi $
+D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\STM32F401RE_I2C_part2.pbi $
+D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\STM32F401RE_I2C_part3.pbi
+  flags = -M "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\STM32F401RE_I2C.pbd" "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\STM32F401RE_I2C_part0.pbi" "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\STM32F401RE_I2C_part1.pbi" "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\STM32F401RE_I2C_part2.pbi" "D$:\STM32F407VET6\com$ port\STM32F401RE_I2C\Debug\BrowseInfo\STM32F401RE_I2C_part3.pbi"
+

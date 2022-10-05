@@ -1,0 +1,33 @@
+D:\STM32F407VET6\com\ port\STM32F401RE_I2C\Debug\BrowseInfo\main.pbi: \
+  D:\STM32F407VET6\com\ port\STM32F401RE_I2C\main.c \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\stdio.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\ycheck.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\yvals.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Defaults.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Config_Normal.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Product.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\ysizet.h \
+  D:\STM32F407VET6\com\ port\STM32F401RE_I2C\CMSIS\stm32f4xx.h \
+  D:\STM32F407VET6\com\ port\STM32F401RE_I2C\CMSIS\stm32f401xe.h \
+  D:\STM32F407VET6\com\ port\STM32F401RE_I2C\CMSIS\core_cm4.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\stdint.h \
+  D:\STM32F407VET6\com\ port\STM32F401RE_I2C\CMSIS\cmsis_version.h \
+  D:\STM32F407VET6\com\ port\STM32F401RE_I2C\CMSIS\cmsis_compiler.h \
+  D:\STM32F407VET6\com\ port\STM32F401RE_I2C\CMSIS\cmsis_iccarm.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\aarch32\iccarm_builtin.h \
+  D:\STM32F407VET6\com\ port\STM32F401RE_I2C\CMSIS\mpu_armv7.h \
+  D:\STM32F407VET6\com\ port\STM32F401RE_I2C\CMSIS\system_stm32f4xx.h \
+  D:\STM32F407VET6\com\ port\STM32F401RE_I2C\gpio.h \
+  D:\STM32F407VET6\com\ port\STM32F401RE_I2C\delay.h \
+  D:\STM32F407VET6\com\ port\STM32F401RE_I2C\i2c.h \
+  D:\STM32F407VET6\com\ port\STM32F401RE_I2C\LCD1602_I2C.h \
+  D:\STM32F407VET6\com\ port\STM32F401RE_I2C\MPU6050.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\stdlib.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Product_stdlib.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\math.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_float_setup.h \
+  D:\STM32F407VET6\com\ port\STM32F401RE_I2C\EXTI.h \
+  D:\STM32F407VET6\com\ port\STM32F401RE_I2C\USART.h \
+  D:\STM32F407VET6\com\ port\STM32F401RE_I2C\timers.h \
+  D:\STM32F407VET6\com\ port\STM32F401RE_I2C\SET_CLOCK.h \
+  D:\STM32F407VET6\com\ port\STM32F401RE_I2C\PID.h
